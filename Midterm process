@@ -1,0 +1,71 @@
+let boxes = [];
+
+function setup() {
+  createCanvas(400, 400);
+  var a = 0;
+  var b = 0;
+  for (var i = 0; i <= width; i++) {
+    boxes[i] = new Box(a, b, 20, 20,10,10,10);
+  }
+}
+
+function draw() {
+  background(220);
+  for (var i = 0; i <= width; i++) {
+    boxes[i].move();
+    //  boxes[i].show();
+  }
+
+
+}
+
+
+class Box {
+
+  constructor(x, y, w, h,r,g,b) {
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    
+    this.R = r;
+    this.G = g;
+    this.B = b;
+  }
+
+  move() {
+    fill(this.R, this.G, this.B);
+    for (var i = 0; i < 15; i++) {
+      for (var z = 0; z < 15; z++) {
+        rect(this.x + this.w * i * 1.3, this.y + this.h * z * 1.3, this.w, this.h);
+      }
+    }
+  }
+
+  //  move2() {
+  //   for (var i = 0; i < 15; i++) {
+  //     for (var z = 0; z < 15; z++) {
+  //       this.x =this.x + this.w * i*1.3;
+  //       this.y =  this.y + this.h * z*1.3;
+  //     }
+  //   }
+  // }
+  show() {
+    fill(this.R, this.G, this.B);
+    rect(this.x, this.y, this.w, this.h);
+  }
+
+}
+
+
+function mousePressed() {
+ 
+    for (var i = 0; i < 15; i++) {
+      for (var z = 0; z < 15; z++) {
+    boxes[8].R = 200;
+    boxes[8].G = 20;
+    boxes[8].B = 220;
+  
+           }
+    }
+  }
